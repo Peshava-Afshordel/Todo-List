@@ -1,0 +1,69 @@
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../assets/Fonts/IRANSansXFaNum-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/Fonts/IRANSansXFaNum-UltraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/Fonts/IRANSansXFaNum-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/Fonts/IRANSansXFaNum-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/Fonts/IRANSansXFaNum-DemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/Fonts/IRANSansXFaNum-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../assets/Fonts/IRANSansXFaNum-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../assets/Fonts/IRANSansXFaNum-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: IRANSansX;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/Fonts/IRANSansXFaNum-Regular.woff") format("woff");
+}
+*,
+body,
+button,
+input,
+select {
+  font-family: IRANSansX;
+}
