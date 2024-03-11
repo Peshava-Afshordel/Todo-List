@@ -263,3 +263,53 @@ button > i {
   font-size: 15px;
   cursor: pointer;
 }
+
+/* error message */
+.error_message {
+  background-color: var(--mainWhite);
+  position: fixed;
+  top: -1000%;
+  padding: 25px 10px;
+  /* border-left: 1px solid red; */
+  z-index: 20;
+  border-radius: 1.5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  transition: all 0.8s;
+}
+
+.error_hidden {
+  top: 5%;
+  transition: all 0.5s;
+}
+
+.error_message i {
+  font-size: 25px;
+  color: rgb(216, 59, 59);
+  position: relative;
+  top: -4px;
+  right: 2px;
+}
+.error_message::before {
+  content: "";
+  width: 100%;
+  background-color: rgb(216, 59, 59);
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* animation: 2s error alternate; */
+  animation: 3s infinite alternate slidein error;
+}
+
+@keyframes error {
+  100% {
+    width: 0;
+  }
+  0% {
+    width: 100%;
+  }
+}

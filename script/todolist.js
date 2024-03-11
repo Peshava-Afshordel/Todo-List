@@ -13,6 +13,7 @@ const modal = document.querySelector(".modal");
 const closeInput = document.querySelector(".close_modal");
 const editSubmit = document.querySelector(".todo_edit");
 const textReplaced = document.querySelector(".modal_input");
+const errorMessage = document.querySelector(".error_message");
 
 // event
 todoForm.addEventListener("submit", addNewTodo);
@@ -188,28 +189,26 @@ function sortTodos() {
 // edit todo
 function editTodo(e) {
   // open modal
-  if (
-    modal.classList.contains("hidden") &&
-    backDrop.classList.contains("hidden")
-  ) {
-    backDrop.classList.remove("hidden");
-    modal.classList.remove("hidden");
-  } else {
-    closeModal();
-  }
+  openModal();
   e.preventDefault();
   const todo = getAllTodos();
   const todoId = +e.target.dataset.todoId;
-  const todos = todo.find((t) => {
-    if (t.id === todoId) {
-      editSubmit.addEventListener("click", () => {
+  todo.find((t) => {
+    editSubmit.addEventListener("click", (e) => {
+      if (textReplaced.value === "") {
+        e.preventDefault();
+        error();
+        setTimeout(() => {
+          errorMessage.classList.toggle("error_hidden");
+        }, 2500);
+      } else if (t.id === todoId) {
+        e.preventDefault();
         t.title = textReplaced.value;
         savedAllTodos(todo);
         createTodos(todo);
-      });
-    } else {
-      return null;
-    }
+        closeModal();
+      }
+    });
     textReplaced.value = "";
   });
 }
@@ -217,4 +216,15 @@ function editTodo(e) {
 function closeModal() {
   backDrop.classList.add("hidden");
   modal.classList.add("hidden");
+}
+// open modal
+function openModal() {
+  backDrop.classList.remove("hidden");
+  modal.classList.remove("hidden");
+}
+
+// error message
+function error() {
+  const error = errorMessage.classList.toggle("error_hidden");
+  return error;
 }
