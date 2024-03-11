@@ -268,10 +268,10 @@ button > i {
 .error_message {
   background-color: var(--mainWhite);
   position: fixed;
-  top: -1000%;
+  top: 5%;
   padding: 25px 10px;
-  opacity: 0;
   z-index: 20;
+  opacity: 1;
   border-radius: 1.5px;
   overflow: hidden;
   display: flex;
@@ -282,17 +282,23 @@ button > i {
 }
 
 .error_hidden {
-  top: 5%;
-  opacity: 1;
+  top: -1000px;
+  opacity: 0;
   transition: all 0.5s;
 }
-
+.error_message p {
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
 .error_message i {
   font-size: 25px;
   color: rgb(216, 59, 59);
   position: relative;
   top: -4px;
+  opacity: 1;
   right: 2px;
+  transition: all 0.5s;
 }
 .error_message::before {
   content: "";
@@ -302,15 +308,16 @@ button > i {
   position: absolute;
   bottom: 0;
   left: 0;
-  /* animation: 2s error alternate; */
-  animation: 3s infinite alternate slidein error;
+  opacity: 1;
+  transition: all 0.5s; /* animation: 2s error alternate; */
+  animation: 2.5s error;
 }
 
 @keyframes error {
-  100% {
+  0% {
     width: 0;
   }
-  0% {
+  100% {
     width: 100%;
   }
 }
