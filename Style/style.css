@@ -270,7 +270,7 @@ button > i {
   position: fixed;
   top: -1000%;
   padding: 25px 10px;
-  /* border-left: 1px solid red; */
+  opacity: 0;
   z-index: 20;
   border-radius: 1.5px;
   overflow: hidden;
@@ -283,6 +283,7 @@ button > i {
 
 .error_hidden {
   top: 5%;
+  opacity: 1;
   transition: all 0.5s;
 }
 
