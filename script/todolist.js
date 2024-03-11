@@ -198,8 +198,10 @@ function editTodo(e) {
       if (textReplaced.value === "") {
         e.preventDefault();
         error();
+        textReplaced.style.border = "1px solid rgb(216, 59, 59)";
         setTimeout(() => {
           errorMessage.classList.toggle("error_hidden");
+          textReplaced.style.border = "1px solid var(--secondayGrey)";
         }, 2500);
       } else if (t.id === todoId) {
         e.preventDefault();
